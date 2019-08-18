@@ -29,5 +29,7 @@ $ firewall-cmd --reload
 ```
 ssserver -c /etc/shadowsocks.json
 or
-nohup ssserver -c /etc/shadowsocks.json &
+ssserver -c /etc/shadowsocks.json -d start
+
+ssserver -c /etc/shadowsocks.json -d stop
 ```
