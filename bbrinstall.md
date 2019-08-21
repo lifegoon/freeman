@@ -1,8 +1,17 @@
+## Requirements for Linux server Internet speed with TCP BBR
+Make sure that your Linux kernel has the following option compiled as either module or inbuilt
+into the Linux kernel:
+1. CONFIG_TCP_CONG_BBR
+2. CONFIG_NET_SCH_FQ
+
 ### Part 1 About System Core
-BBR need core 4.9.0 at least
-1. check core version
+BBR need Linux kernel version 4.9 or above
+1. check option
 ```
 uname -r
+grep 'CONFIG_TCP_CONG_BBR' /boot/config-$(uname -r)
+grep 'CONFIG_NET_SCH_FQ' /boot/config-$(uname -r)
+egrep 'CONFIG_TCP_CONG_BBR|CONFIG_NET_SCH_FQ' /boot/config-$(uname -r)
 ```
 2. update core
 ```
