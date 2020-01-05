@@ -1,3 +1,29 @@
+## Method1 Oneshot install
+root
+```
+$ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+```
+### check core
+```
+$ uname -r
+```
+### check tcp control
+```
+$ sysctl net.ipv4.tcp_available_congestion_control
+
+net.ipv4.tcp_available_congestion_control = reno cubic bbr
+
+$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = bbr
+
+$ sysctl net.core.default_qdisc
+net.core.default_qdisc = fq
+
+$ lsmod | grep bbr
+tcp_bbr                20480  11
+```
+
+## Method2 manual install 
 ## Requirements for Linux server Internet speed with TCP BBR
 Make sure that your Linux kernel has the following option compiled as either module or inbuilt
 into the Linux kernel:

@@ -1,4 +1,4 @@
-## Centos 7.x
+## KVM Centos 7.x
 ### 魔改加速
 ```
 $ wget --no-check-certificate https://raw.githubusercontent.com/tcp-nanqinlang/general/master/General/CentOS/bash/tcp_nanqinlang-1.3.2.sh
